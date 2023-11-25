@@ -1,0 +1,36 @@
+{
+  'responseId': 'ef26a4b3-c515-4b97-b43f-ed2b9aeb334d-1ac88cc5',
+  'queryResult': {
+    'queryText': 'сколько время',
+    'parameters': {
+      'geo-city-gb': ''
+    },
+    'allRequiredParamsPresent': True,
+    'outputContexts': [
+      {
+        'name': 'projects/timebot-vdpv/agent/sessions/6a263e1c-0866-c358-523e-2078fd67024b/contexts/__system_counters__',
+        'lifespanCount': 1,
+        'parameters': {
+          'no-input': 0.0,
+          'no-match': 0.0,
+          'geo-city-gb': '',
+          'geo-city-gb.original': ''
+        }
+      }
+    ],
+    'intent': {
+      'name': 'projects/timebot-vdpv/agent/intents/493f5c49-1e5d-492e-9c78-b9d847372c6f',
+      'displayName': 'покажи время'
+    },
+    'intentDetectionConfidence': 1.0,
+    'diagnosticInfo': {
+      'query_sentiment_analysis_error': 'INVALID_ARGUMENT: The language ru is not supported for document_sentiment analysis'
+    },
+    'languageCode': 'ru'
+  },
+  'originalDetectIntentRequest': {
+    'source': 'DIALOGFLOW_CONSOLE',
+    'payload': {}
+  },
+  'session': 'projects/timebot-vdpv/agent/sessions/6a263e1c-0866-c358-523e-2078fd67024b'
+}
