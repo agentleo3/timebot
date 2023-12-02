@@ -27,7 +27,10 @@ def get_result():
     # извлечение параметра
     req = request.get_json(force=True)
     print(req)
-    current_time = get_time(38.9, -77.03)
+    parametrs = req["queryResult"]["parameters"]
+    latitude = parametrs["latitude"]
+    longitude = parametrs["longitude"]
+    current_time = get_time(latitude, longitude)
     print(current_time)
     return {
         "fulfillmentText": current_time
