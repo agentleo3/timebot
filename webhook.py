@@ -7,15 +7,30 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    """
+    тестовый маршрут для проверки работа сервиса
+    :return: "ok"
+    """
     return 'Hello from Flask!'
 
 
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
+    """
+    вебхук для вызова со стороны DW
+    :return: JSON ДЛЯ ВЫЗОВА DW
+    """
+
     return make_response(jsonify(get_result()))
 
 
-def get_time(latitude, longitude):
+def get_time(latitude: float, longitude: float) -> str:
+    """
+    возвращает время и дату по каарждинатам
+    :param latitude:
+    :param longitude:
+    :return:дата и время
+    """
     url = f'https://timeapi.io/api/Time/current/coordinate?latitude={latitude}&longitude={longitude}'
     response = requests.get(url).json()
     time = response["time"]
@@ -23,7 +38,11 @@ def get_time(latitude, longitude):
     return f"{time}, {date}"
 
 
-def get_result():
+def get_result() -> dict:
+    """
+    возвращает ответ бота
+    :return:словарь с данными для бота
+    """
     # извлечение параметра
     req = request.get_json(force=True)
     print(req)
